@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMitra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="..." crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="heading">
+            <div class="logo">MediMitra</div>
+            <p> Bringing Healthcare to Your Doorstep</p>
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo">MediMitra</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#home" onclick="toggleMenu()">Home</a></li>  
+                    <li><a href="#catalog" onclick="toggleMenu()">Catalog</a></li>
+                    <li><a href="#order" onclick="toggleMenu()">Order</a></li>
+                    <li><a href="#contact-us" onclick="toggleMenu()">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--Done with the nav-->
+
+
+<section id="home">
+    <div class="home-container">
+        <div class="home-content">
+            <h1>Revolutionizing Healthcare in Rural India</h1>
+            <p>
+                Our web-based platform helps villagers order medicines in their local language with ease. The application supports voice-to-text conversion for seamless ordering and connects users to nearby pharmacies. Even in offline mode, users can place orders through a phone-based AI assistant. Our platform also provides real-time order tracking, multilingual support, and a network of local health workers for quick and reliable delivery. By bridging the healthcare gap in rural areas, we ensure accessibility, affordability, and convenience for all. 
+            </p>
+        </div>
+        <div class="home-image">
+            <img src="{{ url_for('static', filename='images/doctor2.jpg') }}" alt="Healthcare for Rural India">
+        </div>
+    </div>
+</section>
+
+
+<div class="floating-chatbots">
+    <button class="chatbot-button" id="infoBotButton">
+        <img src="{{ url_for('static', filename='images/info-bot.jpg') }}" alt="Info Bot">
+    </button>
+    <button class="chatbot-button" id="orderBotButton">
+        <img src="{{ url_for('static', filename='images/order-bot.jpg') }}" alt="Order Bot">
+    </button>
+</div>
+
+
+</div>
+<div class="chat-container" id="infoChat">
+    <div class="chat-header">
+        <span>Info Bot</span>
+        <button class="close-btn" onclick="closeChat('infoChat')">&times;</button>
+    </div>
+    <div class="chat-body">
+        
+       
+            <p>Hi! I'm Info Bot. Click the button below and speak your symptoms/order.</p>
+            <button onclick="window.open('https://studio.pickaxe.co/STUDIOBL85WI7X18W3G75/GX500VTTC1', '_blank')" class="contact-btn">
+                Chat with InfoBot
+            </button>
+     
+    </div>
+</div>
+
+
+
+<div class="chat-container" id="orderChat">
+    <div class="chat-header">
+        <span>Dasha Agent</span>
+        <button class="close-btn" onclick="closeChat('orderChat')">&times;</button>
+    </div>
+    <div class="chat-body">
+        <p>Hi! I'm Order Bot. Click the button below and speak your symptoms/order.</p>
+        <button onclick="triggerOrderBot()" class="contact-btn">Speak to Dasha Agent</button>
+        <p id="bot-response" style="margin-top:10px; color: green;"></p>
+    </div>
+    
+</div>
+ 
+
+<section id="catalog">
+    <div class="catalog-container">
+        <h2 class="animated-heading">Explore Our Medicine Catalog</h2>
+        <p>
+            Browse through our extensive catalog of medicines, health supplements, and essential 
+            healthcare products. Our user-friendly platform allows you to find medicines in your 
+            local language with ease.
+        </p>
+        <a href="{{ url_for('show_catalog') }}" class="catalog-btn">View Catalog</a>
+
+    </div>
+</section>
+
+<section id="contact-us">
+    <div class="contact-about-container">
+        <h2 class="contact-section-title">Contact Us</h2>
+        <p>We are here to assist you. If you have any questions, feedback, or need help with your medication orders, feel free to reach out.</p>
+        
+            <form  method="POST" id="contact-form">
+
+            <input type="hidden" name="access_key" value="e3670d50-8725-40a6-86c6-9dbdbe90c695">
+            <div class="contact-form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="contact-name" class="contact-form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="contact-form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="contact-email" class="contact-form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="contact-form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="contact-message" class="contact-form-control" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+        <p class="contact-note">We will respond to your query as soon as possible. Thank you for reaching out to us!</p>
+    </div>
+</section>
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We are dedicated to improving healthcare access in rural India by bridging the gap between villagers and pharmacies. Our service ensures that medicine is delivered to your doorstep with ease.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:support@healthcareapp.com">support@healthcareapp.com</a></li>
+                    <li><a href="tel:+1234567890">+123 4567 8910</a></li>
+                    <li><a href="#">Locate Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HealthcareApp. All rights reserved. Improving healthcare for rural India.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

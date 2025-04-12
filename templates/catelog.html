@@ -1,0 +1,131 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - MediMitra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/catelog.css') }}">
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">MediMitra</div>
+        <nav>
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="{{ url_for('home_redirect') }}">Home</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="catalog">
+        <h2 class="catalog-title">Browse Medicines</h2>
+        <div class="catalog-grid" id="catalog-grid">
+           
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t1.jpg') }}" alt="Paracetamol">
+                <h3>Paracetamol</h3>
+                <p>Pain relief, reduces fever</p>
+                <p><strong>₹50</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t2.jpg') }}" alt="Aspirin">
+                <h3>Aspirin</h3>
+                <p>Pain relief, inflammation, heart attack prevention</p>
+                <p><strong>₹120</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t3.jpg') }}" alt="Amoxicillin">
+                <h3>Amoxicillin</h3>
+                <p>Antibiotic for bacterial infections</p>
+                <p><strong>₹150</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t4.jpg') }}" alt="Ibuprofen">
+                <h3>Ibuprofen</h3>
+                <p>Pain relief, reduces fever and inflammation</p>
+                <p><strong>₹80</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t5.jpg') }}" alt="Cetirizine">
+                <h3>Cetirizine</h3>
+                <p>Allergy relief, hay fever</p>
+                <p><strong>₹60</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t6.jpg') }}" alt="Metformin">
+                <h3>Metformin</h3>
+                <p>Helps control blood sugar in type 2 diabetes</p>
+                <p><strong>₹250</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t7.jpg') }}" alt="Lipitor">
+                <h3>Lipitor</h3>
+                <p>Lowers cholesterol</p>
+                <p><strong>₹300</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t8.jpg') }}" alt="Loratadine">
+                <h3>Loratadine</h3>
+                <p>Allergy relief</p>
+                <p><strong>₹70</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t9.jpg') }}" alt="Hydrochlorothiazide">
+                <h3>Hydrochlorothiazide</h3>
+                <p>Diuretic for high blood pressure</p>
+                <p><strong>₹120</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t10.jpg') }}" alt="Losartan">
+                <h3>Losartan</h3>
+                <p>Treats high blood pressure</p>
+                <p><strong>₹220</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t11.jpg') }}" alt="Omeprazole">
+                <h3>Omeprazole</h3>
+                <p>Treats heartburn and acid reflux</p>
+                <p><strong>₹150</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t12.jpg') }}" alt="Diazepam">
+                <h3>Diazepam</h3>
+                <p>Used to relieve anxiety, muscle spasms</p>
+                <p><strong>₹180</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t13.jpg') }}" alt="Paroxetine">
+                <h3>Paroxetine</h3>
+                <p>Treats depression, anxiety disorders</p>
+                <p><strong>₹280</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t14.jpg') }}" alt="Prednisolone">
+                <h3>Prednisolone</h3>
+                <p>Reduces inflammation</p>
+                <p><strong>₹100</strong></p>
+            </div>
+            <div class="catalog-card">
+                <img src="{{ url_for('static', filename='images/t15.jpg') }}" alt="Levothyroxine">
+                <h3>Levothyroxine</h3>
+                <p>Treats hypothyroidism</p>
+                <p><strong>₹350</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MediMitra. All rights reserved.</p>
+    </footer>
+    
+
+</body>
+
+</html>
+
