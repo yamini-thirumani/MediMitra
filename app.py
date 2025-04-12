@@ -14,11 +14,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Twilio configuration
-load_dotenv()
-TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
-TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
-TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER")
-YOUR_PHONE_NUMBER = os.getenv("YOUR_PHONE_NUMBER")
+
 
 # Dummy user info
 def get_dummy_user_info():
